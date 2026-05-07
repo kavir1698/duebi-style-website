@@ -1,0 +1,44 @@
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var mapEl = document.getElementById('map');
+    if (mapEl) {
+      var map = L.map('map').setView([{{ site.data.store.address.mapbox_coords.lat }}, {{ site.data.store.address.mapbox_coords.lng }}], 15);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+      var tealIcon = L.divIcon({
+        className: 'custom-pin',
+        html: '<div style="width: 30px; height: 30px; background: #4ED7CD; border: 3px solid #0A0A0A; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 0 15px rgba(78, 215, 205, 0.5);"></div>',
+        iconSize: [30, 30],
+        iconAnchor: [15, 30]
+      });
+
+      L.marker([{{ site.data.store.address.mapbox_coords.lat }}, {{ site.data.store.address.mapbox_coords.lng }}], {icon: tealIcon}).addTo(map);
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.querySelector('.nav-links');
+
+    if (toggle && links) {
+      toggle.addEventListener('click', function () {
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !expanded);
+        links.classList.toggle('active');
+      });
+
+      links.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          links.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  });
+</script>

@@ -1,0 +1,72 @@
+---
+layout: default
+title: Dübi Style Outlet
+---
+
+{% include hero.html %}
+
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="section-title">
+      <h2>Aktuelle Deals</h2>
+      <p>Top-Marken. Echte Rabatte. Nur im Outlet.</p>
+    </div>
+    <div class="product-grid">
+      {% assign products = site.products | sort: "price" %}
+      {% for product in products %}
+        {% include product-card.html product=product %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="map-section" id="location">
+  <div class="container">
+    <div class="section-title">
+      <h2>Besuche uns</h2>
+      <p>Komm vorbei und entdecke unsere aktuellen Deals.</p>
+    </div>
+    <div class="store-info">
+      <div class="info-block">
+        <h4>Adresse</h4>
+        <p>
+          {{ site.data.store.address.line1 }}<br>
+          {{ site.data.store.address.zip }} {{ site.data.store.address.city }}<br>
+          {{ site.data.store.address.country }}
+        </p>
+      </div>
+      <div class="info-block">
+        <h4>Öffnungszeiten</h4>
+        {% for entry in site.data.store.hours %}
+        <p>{{ entry.day }}: {{ entry.time }}</p>
+        {% endfor %}
+      </div>
+      <div class="info-block">
+        <h4>Kontakt</h4>
+        <p>
+          <a href="tel:{{ site.data.store.phone }}">{{ site.data.store.phone }}</a><br>
+          <a href="mailto:{{ site.data.store.email }}">{{ site.data.store.email }}</a>
+        </p>
+      </div>
+      <div class="info-block">
+        <h4>Social Media</h4>
+        <div class="social-links">
+          {% if site.data.store.social.instagram %}
+          <a href="{{ site.data.store.social.instagram }}" target="_blank" rel="noopener">Instagram</a>
+          {% endif %}
+          {% if site.data.store.social.facebook %}
+          <a href="{{ site.data.store.social.facebook }}" target="_blank" rel="noopener">Facebook</a>
+          {% endif %}
+          {% if site.data.store.social.tiktok %}
+          <a href="{{ site.data.store.social.tiktok }}" target="_blank" rel="noopener">TikTok</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="map-container" id="map"></div>
+  </div>
+</section>
+
+<div class="sticky-cta">
+  <a href="#products" class="sticky-cta-btn">Find Deals</a>
+</div>

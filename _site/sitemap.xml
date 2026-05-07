@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/products/adidas-ultraboost/</loc>
+<lastmod>2026-05-08T00:30:25+02:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/products/levis-501-jeans/</loc>
+<lastmod>2026-05-08T00:30:25+02:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/products/nike-air-max-90/</loc>
+<lastmod>2026-05-08T00:30:25+02:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/products/puma-suede-classic/</loc>
+<lastmod>2026-05-08T00:30:25+02:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/products/ray-ban-aviator/</loc>
+<lastmod>2026-05-08T00:30:25+02:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/products/tommy-hilfiger-polo/</loc>
+<lastmod>2026-05-08T00:30:25+02:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+</urlset>
